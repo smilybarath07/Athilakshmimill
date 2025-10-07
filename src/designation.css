@@ -1,0 +1,24 @@
+.designation-container{
+    background-color: rgb(255, 255, 255);
+    width: 73%;
+    margin-top: -40%;
+    padding: 50px 20px 20px 20px;
+    margin-left: 25%;
+    border-radius: 20px;
+}
+.designation{
+    font-size: 30px;
+    color: blue;
+}
+.Add-2{
+    background-color: blue;
+    color: white;
+    height: 40px;
+    padding: 5px 20px 20px 20px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+.Add-2 h3{
+    font-weight: 500;
+    font-size: 20px;
+}

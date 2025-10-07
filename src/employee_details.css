@@ -1,0 +1,25 @@
+.employee_details-container{
+    background-color: rgb(255, 255, 255);
+    width: 73%;
+    margin-top: -40%;
+    padding: 50px 20px 20px 20px;
+    margin-left: 25%;
+    border-radius: 20px;
+    overflow-x: scroll;
+}
+.employee_details{
+    font-size: 30px;
+    color: blue;
+}
+.Add-3{
+    background-color: blue;
+    color: white;
+    height: 40px;
+    border-radius: 10px;
+    padding: 5px 20px 20px 20px;
+    cursor: pointer;
+}
+.Add-3 h3{
+    font-weight: 500;
+    font-size: 20px;
+}

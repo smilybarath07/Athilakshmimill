@@ -1,0 +1,26 @@
+.company-container{
+    background-color: rgb(255, 255, 255);
+    width: 73%;
+    margin-top: -40%;
+    padding: 50px 20px 20px 20px;
+    margin-left: 25%;
+    border-radius: 20px;
+}
+.Company{
+    font-size: 30px;
+    color: blue;
+}
+.Add{
+    background-color: blue;
+    color: white;
+    height: 40px;
+    width: 220px;
+    border-radius: 10px;
+    margin-left: 35%;
+    padding: 5px 20px 20px 20px;
+    cursor: pointer;
+}
+.Add h3{
+    font-weight: 500;
+    font-size: 20px;
+}

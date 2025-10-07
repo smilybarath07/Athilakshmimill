@@ -1,35 +1,46 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
+import React from 'react'
 import './App.css'
+import Navbar from './navbar.jsx'
+import Login from './login.jsx'
+import Company from './company.jsx'
+import Department from './department.jsx'
+import Designation from './designation.jsx'
+import Employee_details from './employee_details.jsx'
+import AddCompany from './add_employee.jsx'
+import 'bootstrap/dist/css/bootstrap.min.css';
+import { BrowserRouter, Routes, Route,Router } from 'react-router-dom';
 
-function App() {
-  const [count, setCount] = useState(0)
+
+
+export default function App() {
+
+  const[isAdd,setIsAdd]=React.useState(false);
+
+  const [isLogin, setIsLogin] = React.useState(()=>{
+    return localStorage.getItem("isLogin") === "true";
+  }
+  );
+
+  const handleLogin = () => { setIsLogin(true); };
+  const handleLogout = () => { setIsLogin(false); 
+    localStorage.removeItem('isLogin');
+    localStorage.removeItem('username');
+   };
+
+  if (!isLogin) {
+    return <Login onLogin={handleLogin} />;
+  }
 
   return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
+    <BrowserRouter>
+        <Navbar onLogout={handleLogout}/>
+        <Routes>
+          <Route path="/company" element={<Company  setIsAdd={setIsAdd} />} />
+          <Route path="/department" element={<Department setIsAdd={setIsAdd}/>} />
+          <Route path="/designation" element={<Designation setIsAdd={setIsAdd}/>} />
+          <Route path="/employee_details" element={<Employee_details setIsAdd={setIsAdd} />} />
+        </Routes>
+        {isAdd ?<AddCompany setIsAdd={setIsAdd}/>:<></>}
+    </BrowserRouter>
   )
 }
-
-export default App
